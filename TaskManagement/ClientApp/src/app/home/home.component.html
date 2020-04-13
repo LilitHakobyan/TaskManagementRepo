@@ -1,30 +1,30 @@
 <h2>List of Jobs</h2>
 <button mat-button (click)="add()" mat-flat-button color="primary">Add Row</button>
 <table *ngIf="tableMode; else create" class="table table-striped example-full-width" cellspacing="0">
-    <thead>
-      <tr>
-        <td>Name</td>
-        <td>Description</td>
-        <td>Scheduled Date</td>
-        <td>Created Date</td>
-        <td></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let j of jobs">
-        <ng-template [ngIf]="job?.id != j.id" [ngIfElse]="edit">
-          <td>{{j?.name}}</td>
-          <td>{{j?.description}}</td>
-          <td>{{j?.scheduledTime}}</td>
-          <td>{{j?.createdDate}}</td>
-          <td>
-            <button mat-button (click)="editJob(j)" mat-flat-button color="primary">Edit</button>
-            <button mat-button (click)="delete(j)" mat-flat-button color="accent">Delete</button>
-          </td>
-        </ng-template>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Description</td>
+      <td>Scheduled Date</td>
+      <td>Created Date</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let j of jobs">
+      <ng-template [ngIf]="job?.id != j.id" [ngIfElse]="edit">
+        <td>{{j?.name}}</td>
+        <td>{{j?.description}}</td>
+        <td>{{j?.scheduledTime}}</td>
+        <td>{{j?.createdDate}}</td>
+        <td>
+          <button mat-button (click)="editJob(j)" mat-flat-button color="primary">Edit</button>
+          <button mat-button (click)="delete(j)" mat-flat-button color="accent">Delete</button>
+        </td>
+      </ng-template>
+    </tr>
+  </tbody>
+</table>
 
   <!--Edit panel-->
   <ng-template #edit>
@@ -50,21 +50,21 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Name" [(ngModel)]="job.name">
+              <input matInput placeholder="Name" required [(ngModel)]="job.name">
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Description" [(ngModel)]="job.description">
+              <input matInput placeholder="Description" required [(ngModel)]="job.description">
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="ScheduledTime" [(ngModel)]="job.scheduledTime">
+              <input matInput placeholder="ScheduledTime" required  type="datetime-local" [(ngModel)]="job.scheduledTime">
             </mat-form-field>
           </td>
         </tr>
