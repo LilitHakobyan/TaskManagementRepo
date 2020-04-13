@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit{
   job: Job = new Job();   //current job
   jobs: Job[];                // arr jobs
   tableMode: boolean =true;       // state of table
-
-  constructor(private dataService: DataService, public dialog: MatDialog) { }
+  constructor(private dataService: DataService, public dialog: MatDialog) {
+  }
 
   ngOnInit() {
     this.loadJobs();    // load jobs when component will start  

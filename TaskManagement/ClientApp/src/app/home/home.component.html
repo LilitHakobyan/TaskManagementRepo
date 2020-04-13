@@ -50,21 +50,21 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Name" [(ngModel)]="job.name">
+              <input matInput placeholder="Name" required [(ngModel)]="job.name">
+            </mat-form-field>
+          </td>date
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Description" required [(ngModel)]="job.description">
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Description" [(ngModel)]="job.description">
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="ScheduledTime" [(ngModel)]="job.scheduledTime">
+              <input matInput placeholder="ScheduledTime"type="date" required [(ngModel)]="job.scheduledTime">
             </mat-form-field>
           </td>
         </tr>
