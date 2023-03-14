@@ -16,6 +16,9 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
     npm install
     npm run build
   displayName: 'npm install and build'
